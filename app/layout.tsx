@@ -1,18 +1,18 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Inter, Roboto_Mono } from "next/font/google"
 import "./globals.css"
 import { AuthProvider } from "@/lib/auth"
 import { Suspense } from "react"
 
-const geistSans = Geist({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-geist-sans",
+  variable: "--font-inter",
 })
 
-const geistMono = Geist_Mono({
+const robotoMono = Roboto_Mono({
   subsets: ["latin"],
-  variable: "--font-geist-mono",
+  variable: "--font-roboto-mono",
 })
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-BR" className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <html lang="pt-BR" className={`${inter.variable} ${robotoMono.variable} antialiased`}>
       <body className="font-sans">
         <Suspense fallback={<div>Loading...</div>}>
           <AuthProvider>{children}</AuthProvider>
