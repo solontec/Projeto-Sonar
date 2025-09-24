@@ -1,4 +1,4 @@
-"use client"
+"use client" // usando o arquivo de clientes
 
 import type React from "react"
 import { useState, useEffect } from "react"
